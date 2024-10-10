@@ -9,10 +9,12 @@ const StyledCardBottom = styled.div`
   font-size: var(--fs-s);
   color: var(--grey-color);
   padding: 1rem 1.5rem;
+  border-top: var(--border);
 `;
 
 const Text = styled.p`
-  width: 10rem;
+  width: 12rem;
+  padding: 0.5rem 0.8rem;
 `;
 
 const Button = styled.button`
@@ -27,7 +29,7 @@ const Button = styled.button`
 `;
 
 export default function CardBottom() {
-  const { filteredTodos, clearDoneTodos } = useTodo();
+  const { filteredTodos, todos, clearDoneTodos } = useTodo();
   const todosLeft = filteredTodos.filter((todo) => !todo.isDone).length;
 
   return (
@@ -39,8 +41,12 @@ export default function CardBottom() {
             : `Осталось: ${todosLeft}`
           : "Все сделано"}
       </Text>
-      <Filter />
-      <Button onClick={clearDoneTodos}>Убрать готовые</Button>
+      {todos.length ? (
+        <>
+          <Filter />
+          <Button onClick={clearDoneTodos}>Убрать готовые</Button>
+        </>
+      ) : null}
     </StyledCardBottom>
   );
 }

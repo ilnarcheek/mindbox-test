@@ -13,6 +13,8 @@ export const GlobalStyle = createGlobalStyle`
     --fs-l: 10rem;
     --fs-m: 2.5rem;
     --fs-s: 1.5rem;
+
+    --border: 1px solid var(--secondary-color);
   }
 
   * {
@@ -111,4 +113,27 @@ export const GlobalStyle = createGlobalStyle`
   legend {
     display: block;
   }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--cb-uncheked-color);
+
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+  }
+
+  &:hover::-webkit-scrollbar-thumb,
+  &:active::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 1;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
 `;

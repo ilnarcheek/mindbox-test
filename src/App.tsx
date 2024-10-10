@@ -6,8 +6,9 @@ const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100dvh;
-  padding-top: 20rem;
+  height: 100%;
+  margin-top: 20rem;
+  margin-bottom: 5rem;
 `;
 
 export default function App() {

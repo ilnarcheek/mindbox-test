@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useTodo } from "./../hooks/useTodo";
 
 const Input = styled.input`
+  width: 100%;
   &::placeholder {
     font-weight: 100;
     font-style: italic;

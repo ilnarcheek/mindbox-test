@@ -4,8 +4,12 @@ import { useTodo } from "./../hooks/useTodo";
 
 const List = styled.ul<{ $isExpand: boolean }>`
   display: flex;
-  display: ${({ $isExpand }) => ($isExpand ? "flex" : "none")};
   flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: ${({ $isExpand }) => ($isExpand ? "40rem" : "0")};
+  opacity: ${({ $isExpand }) => ($isExpand ? "1" : "0")};
+  transition: all 0.3s ease;
 `;
 
 export default function TodoList() {

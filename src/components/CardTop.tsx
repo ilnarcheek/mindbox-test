@@ -5,7 +5,7 @@ import TodoInput from "./TodoInput";
 const StyledCardTop = styled.div`
   display: flex;
   padding: 1.5rem 1rem;
-  border-bottom: 2px solid var(--secondary-color);
+  border-bottom: var(--border);
 `;
 export default function CardTop() {
   return (

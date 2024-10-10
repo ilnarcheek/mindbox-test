@@ -5,7 +5,11 @@ import ITodo from "../types/ITodo";
 const StyledTodoItem = styled.li`
   display: flex;
   padding: 1rem;
-  border-bottom: 1px solid var(--secondary-color);
+  border-bottom: var(--border);
+
+  &:last-child {
+    border-bottom: none;
+  }
 `;
 
 const Label = styled.label<{ $isDone: boolean }>`
